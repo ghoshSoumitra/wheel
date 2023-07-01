@@ -1,0 +1,319 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    background: url('https://www.indivstock.com/static21/preview2/stock-photo-free-download-casino-background-3d-render-poker-jackpot-casino-250689.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .container {
+    width: 500px;
+    height: 500px;
+    background-color: #ccc;
+    border-radius: 50%;
+    border: 15px solid #dde;
+    position: relative;
+    overflow: hidden;
+    transition: 5s;
+  }
+  
+  .container div {
+    height: 50%;
+    width: 200px;
+    position: absolute;
+    clip-path: polygon(100% 0, 50% 100%, 0 0);
+    transform: translateX(-50%);
+    transform-origin: bottom;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: #fff;
+    left: 135px;
+  }
+  
+  p {
+    margin-bottom: 200px;
+  }
+  
+  .container .one {
+    background-color: #3f51b5;
+    transform: rotate(0deg);
+    
+  }
+  
+  .container .two {
+    background-color: #ff9800;
+    transform: rotate(45deg);
+  }
+  
+  .container .three {
+    background-color: #e91e63;
+    transform: rotate(90deg);
+  }
+  
+  .container .four {
+    background-color: #4caf50;
+    transform: rotate(135deg);
+  }
+  
+  .container .five {
+    background-color: #009688;
+    transform: rotate(180deg);
+  }
+  
+  .container .six {
+    background-color: #795548;
+    transform: rotate(225deg);
+  }
+  
+  .container .seven {
+    background-color: #9c27b0;
+    transform: rotate(270deg);
+  }
+  
+  .container .eight {
+    background-color: #f44336;
+    transform: rotate(315deg);
+  }
+  
+  .arrow {
+    position: absolute;
+    top: 38%;
+    left: 49%;
+    color: #fff;
+    z-index: 100;
+    transform: rotate(180deg);
+  }
+  
+  .arrow::before {
+    content: "\1F817";
+    font-size: 50px;
+  }
+  
+  #spin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background-color: #0a2289;
+    text-transform: uppercase;
+    border: 8px solid #fff;
+    font-weight: bold;
+    font-size: 20px;
+    color: #a2a2a2;
+    width: 80px;
+    height: 80px;
+    font-family: sans-serif;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+    letter-spacing: 1px;
+    box-shadow: 5px 5px 8px #f2eb09, -5px -5px 8px #711ade;
+    text-shadow: 2px 2px 4px red;
+  }
+  
+  /* Existing CSS styles */
+  /* Existing CSS styles */
+  
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: bounce-in 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  @keyframes bounce-in {
+    0% {
+      opacity: 0;
+      transform: scale(0.1);
+    }
+    60% {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .modal-content {
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px;
+    text-align: center;
+    animation: slide-up 0.3s ease-in, color-change 2s infinite alternate;
+    height: 56vh;
+  }
+  
+  .modal-content img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+  }
+  
+  @keyframes slide-up {
+    from {
+      transform: translateY(50px);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes color-change {
+    0% {
+      background-color: rgb(144 0 0);
+    }
+    20% {
+      background-color: #ff00de;
+    }
+    40% {
+      background-color: #00ffaa;
+    }
+    60% {
+      background-color: #ff9900;
+    }
+    80% {
+      background-color: #00aaff;
+    }
+    100% {
+      background-color: rgb(114 15 123);
+    }
+  }
+  
+  .close {
+    color: red;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* Existing CSS styles */
+  
+  .spin-container {
+    display: flex;
+    justify-content: center;
+    height: 10vh;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    right: 0;
+    background-color: rgba(2, 182, 33, 0.8);
+  }
+  
+  .bounce {
+    animation: bounce-infinite 2s ease-in-out infinite;
+    margin-top: 10px;
+    color: blue;
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+  }
+  
+  @keyframes bounce-infinite {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  /* Responsive Styles */
+@media (max-width: 768px) {
+    
+    .arrow {
+        position: absolute;
+        top: 45%;
+        left: 49.5%;
+        color: #fff;
+        z-index: 100;
+        transform: translate(-50%, -50%) rotate(180deg);
+      }
+  
+    .modal-content {
+      width: 200px;
+    }
+  
+    .modal-content img {
+      margin-top: 5px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container div {
+        height: 50%;
+        width: 195px;
+        position: absolute;
+        clip-path: polygon(100% 0, 50% 100%, 0 0);
+        transform: translateX(-50%);
+        transform-origin: bottom;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        font-weight: bold;
+        font-family: sans-serif;
+        color: #fff;
+        left: 50%;
+        top: 26.5%;
+        margin-top: -125px;
+        margin-left: -95px;
+    }
+  
+    .arrow {
+      position: absolute;
+      top: 44%;
+      left: 50%;
+      color: #fff;
+      z-index: 100;
+      transform: translate(-50%, -50%) rotate(180deg);
+    }
+  
+    p {
+      margin-bottom: 100px;
+      font-size: 1rem;
+    }
+  
+    .modal-content {
+      width: 160px;
+    }
+  
+    .modal-content img {
+      margin-top: 5px;
+    }
+  }
+  
+  
+  
